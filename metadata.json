@@ -1,0 +1,6 @@
+{
+  "name": "Storage Hub & Compliance Ledger",
+  "description": "Rural Utility Cost storage capacity, inventory mapping, and compliance verification hub.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
