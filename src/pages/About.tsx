@@ -1,6 +1,5 @@
 import React from 'react';
 import { SEO } from '../components/seo/SEO';
-import { AdBox } from '../components/ads/AdBox';
 
 export function About() {
   return (
@@ -19,8 +18,6 @@ export function About() {
             The Storage app is an integrated component of the Rural Utility Cost master ecosystem. It functions as the primary "Compliance Ledger," providing technical auditors, farmers, and utility managers a safe sandbox to forecast capacities and identify compliance thresholds before irreversible operational decisions are made.
           </p>
         </div>
-
-        <AdBox slotId="about_in_content" className="my-8" />
 
         <h3 className="text-2xl font-bold text-stone-800 mt-8 mb-4">Core Mission</h3>
         <p className="text-stone-600 mb-4">
