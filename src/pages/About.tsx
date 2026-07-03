@@ -5,44 +5,43 @@ export function About() {
   return (
     <article className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-8 py-16 overflow-y-auto">
       <SEO 
-        title="About Storage Vault | Rural Utility Cost"
-        description="Learn about the Compliance Vault Ecosystem, designed to give technical auditors, farmers, and utility managers a secure sandbox for inventory tracking and EPA compliance."
+        title="About Storage Hub | Rural Utility Cost"
+        description="Learn about the Storage Hub, designed to give agricultural operators, technical auditors, and utility managers a secure sandbox for inventory tracking, capacity forecasting, and EPA compliance."
         canonicalPath="/about"
       />
       <div className="prose prose-stone max-w-none">
-        <h1 className="text-stone-800 font-light text-3xl md:text-4xl mb-6">About Rural Utility Cost Storage</h1>
+        <h1 className="text-stone-900 font-bold text-3xl md:text-4xl mb-6 tracking-tight">About Rural Utility Cost Storage Hub</h1>
         
         <div className="bg-white border border-stone-200 text-stone-800 p-6 rounded-xl mb-8 shadow-sm">
-          <h2 className="text-xl font-bold mb-2 text-stone-900 border-b border-stone-100 pb-2">The Compliance Vault Ecosystem</h2>
-          <p className="font-light tracking-wide leading-relaxed text-stone-600">
-            The Storage app is an integrated component of the Rural Utility Cost master ecosystem. It functions as the primary "Compliance Ledger," providing technical auditors, farmers, and utility managers a safe sandbox to forecast capacities and identify compliance thresholds before irreversible operational decisions are made.
+          <h2 className="text-xl font-bold mb-2 text-stone-900 border-b border-stone-100 pb-2">The Storage Planning Ecosystem</h2>
+          <p className="font-medium tracking-wide leading-relaxed text-stone-600">
+            The Storage Hub is an integrated component of the Rural Utility Cost master ecosystem. It functions as the primary planning ledger, providing agricultural operators, technical auditors, and utility managers a safe sandbox to forecast capacities, analyze holding costs, and identify compliance thresholds before irreversible operational decisions are made.
           </p>
         </div>
 
-        <h3 className="text-2xl font-bold text-stone-800 mt-8 mb-4">Core Mission</h3>
-        <p className="text-stone-600 mb-4">
-          Our core mission is managing Public Water Systems (PWS), agricultural grain holding reserves, and operational fleet tracking under strict compliance benchmarks such as the Safe Drinking Water Act (SDWA) and the Lead & Copper Rule (LCRR/LCRI).
+        <h3 className="text-2xl font-bold text-stone-900 mt-8 mb-4">Core Mission</h3>
+        <p className="text-stone-600 mb-4 leading-relaxed">
+          Our core mission is to replace scratchpad math with reliable, standardized screening tools. We support the management of Public Water Systems (PWS), agricultural grain holding reserves, feed logistics, and equipment storage planning. By integrating standard volumetric math with agricultural logistics and regulatory screening (like EPA/SDWA thresholds), we reduce guesswork in rural operations.
         </p>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8 text-sm">
-          <div className="border border-stone-200 p-5 rounded-xl bg-white shadow-sm">
-             <h4 className="font-bold text-blue-700 uppercase text-[10px] tracking-widest mb-2 border-b border-stone-100 pb-2">Data Veracity</h4>
-             <p className="text-stone-500">Every calculated metric is treated as a formal record subject to "Verification Chain" auditing.</p>
+          <div className="border border-stone-200 p-5 rounded-xl bg-white shadow-sm hover:border-[#2d5d4b]/40 transition-colors">
+             <h4 className="font-bold text-[#2d5d4b] uppercase text-[10px] tracking-widest mb-2 border-b border-stone-100 pb-2">Volumetric Accuracy</h4>
+             <p className="text-stone-600 leading-relaxed">Tools convert physical dimensions into actionable capacities for Grain Bins, Feed Bunkers, Liquid Tanks, and Equipment sheds.</p>
           </div>
-          <div className="border border-stone-200 p-5 rounded-xl bg-white shadow-sm">
-             <h4 className="font-bold text-blue-700 uppercase text-[10px] tracking-widest mb-2 border-b border-stone-100 pb-2">Contaminant Warnings</h4>
-             <p className="text-stone-500">Strict Red Flag alerts when Nitrate, Coliform, or Arsenic limits exceed the specified MCL defined by TCEQ RG-211 reporting.</p>
+          <div className="border border-stone-200 p-5 rounded-xl bg-white shadow-sm hover:border-[#2d5d4b]/40 transition-colors">
+             <h4 className="font-bold text-[#2d5d4b] uppercase text-[10px] tracking-widest mb-2 border-b border-stone-100 pb-2">Compliance & Screening</h4>
+             <p className="text-stone-600 leading-relaxed">Strict screening flags alert users when Nitrate, Coliform, or Arsenic levels approach or exceed regulatory reference limits.</p>
           </div>
-          <div className="border border-stone-200 p-5 rounded-xl bg-white shadow-sm">
-             <h4 className="font-bold text-blue-700 uppercase text-[10px] tracking-widest mb-2 border-b border-stone-100 pb-2">Inventory Deflation</h4>
-             <p className="text-stone-500">Tools calculate risk metrics for biological spoilage across grain and feed silos.</p>
+          <div className="border border-stone-200 p-5 rounded-xl bg-white shadow-sm hover:border-[#2d5d4b]/40 transition-colors">
+             <h4 className="font-bold text-[#2d5d4b] uppercase text-[10px] tracking-widest mb-2 border-b border-stone-100 pb-2">Risk & Cost Management</h4>
+             <p className="text-stone-600 leading-relaxed">Financial and biological calculators evaluate the overhead of carrying inventory versus the risk of moisture and temperature spoilage.</p>
           </div>
-          <div className="border border-stone-200 p-5 rounded-xl bg-white shadow-sm">
-             <h4 className="font-bold text-blue-700 uppercase text-[10px] tracking-widest mb-2 border-b border-stone-100 pb-2">System Integration</h4>
-             <p className="text-stone-500">Inherits core styling, legal logic, and functional integrity from ruralutilitycost.com.</p>
+          <div className="border border-stone-200 p-5 rounded-xl bg-white shadow-sm hover:border-[#2d5d4b]/40 transition-colors">
+             <h4 className="font-bold text-[#2d5d4b] uppercase text-[10px] tracking-widest mb-2 border-b border-stone-100 pb-2">System Integration</h4>
+             <p className="text-stone-600 leading-relaxed">Inherits core styling, legal logic, and functional integrity from the broader Rural Utility Cost planning framework.</p>
           </div>
         </div>
-
       </div>
     </article>
   );
