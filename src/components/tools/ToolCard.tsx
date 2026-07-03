@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { trackClick } from '../../lib/analytics';
 
 interface Props {
+  key?: React.Key;
   tool: StorageTool;
   isFavorite: boolean;
   onToggleFavorite: (id: string) => void;
