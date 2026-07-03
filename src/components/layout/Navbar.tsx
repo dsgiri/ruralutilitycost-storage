@@ -22,13 +22,13 @@ export function Navbar() {
 
   return (
     <header className="bg-white border-b border-stone-200 px-4 sm:px-6 py-3 flex items-center justify-between shadow-sm z-10 w-full shrink-0" role="banner">
-      <div className="flex items-center gap-2">
+      <NavLink to="/" onClick={() => handleNavClick('Home')} className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1 -ml-1">
         <div className="w-8 h-8 flex-shrink-0 bg-blue-700 rounded flex items-center justify-center text-white font-bold" aria-hidden="true">R</div>
         <div className="flex flex-col">
           <span className="text-sm font-bold tracking-tight text-stone-800 uppercase">Rural Utility Cost</span>
           <span className="text-[10px] text-blue-600 font-medium tracking-widest -mt-1 uppercase">Storage Hub</span>
         </div>
-      </div>
+      </NavLink>
       
       {/* Desktop Navigation */}
       <nav className="hidden md:flex gap-5 items-center justify-end flex-1 mr-4" aria-label="Primary Navigation">

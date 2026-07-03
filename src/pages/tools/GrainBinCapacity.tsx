@@ -6,7 +6,8 @@ import {
   Info, 
   RefreshCcw,
   Printer,
-  Share2
+  Share2,
+  Check
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -18,12 +19,20 @@ export function GrainBinCapacity() {
   const [peakHeight, setPeakHeight] = useState<string>('8');
   const [packFactor, setPackFactor] = useState<string>('1.0');
 
+  const [isCopied, setIsCopied] = useState(false);
+
   // Calculations
   const results = useMemo(() => {
-    const d = parseFloat(diameter) || 0;
-    const h = parseFloat(eaveHeight) || 0;
-    const p = parseFloat(peakHeight) || 0;
-    const pack = parseFloat(packFactor) || 1.0;
+    // Helper to prevent negative or NaN values
+    const parseInput = (val: string) => {
+      const parsed = parseFloat(val);
+      return isNaN(parsed) || parsed < 0 ? 0 : parsed;
+    };
+
+    const d = parseInput(diameter);
+    const h = parseInput(eaveHeight);
+    const p = parseInput(peakHeight);
+    const pack = parseInput(packFactor) || 1.0;
 
     const radius = d / 2;
     const cylinderVolume = Math.PI * Math.pow(radius, 2) * h;
@@ -41,17 +50,30 @@ export function GrainBinCapacity() {
     const standardBushels = totalCubicFeet / cubicFeetPerBushel;
     const packedBushels = standardBushels * pack;
 
+    const hasValidInputs = d > 0 && h > 0;
+
     return {
       cylinderVolume,
       coneVolume,
       totalCubicFeet,
       standardBushels,
-      packedBushels
+      packedBushels,
+      hasValidInputs
     };
   }, [diameter, eaveHeight, fillShape, peakHeight, packFactor]);
 
   const handlePrint = () => {
     window.print();
+  };
+
+  const handleShare = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy link', err);
+    }
   };
 
   return (
@@ -92,10 +114,10 @@ export function GrainBinCapacity() {
                     setPeakHeight('8');
                     setPackFactor('1.0');
                   }}
-                  className="text-sm text-stone-500 hover:text-[#2d5d4b] flex items-center gap-1 transition-colors"
-                  aria-label="Reset calculator"
+                  className="text-sm text-stone-500 hover:text-[#2d5d4b] flex items-center gap-1 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2d5d4b] rounded px-1"
+                  aria-label="Reset calculator inputs"
                 >
-                  <RefreshCcw className="w-4 h-4" /> Reset
+                  <RefreshCcw className="w-4 h-4" aria-hidden="true" /> Reset
                 </button>
               </div>
 
@@ -110,6 +132,7 @@ export function GrainBinCapacity() {
                     className="w-full px-4 py-3 bg-stone-50 border border-stone-300 rounded-lg focus:ring-2 focus:ring-[#2d5d4b] focus:border-[#2d5d4b] outline-none transition-shadow text-lg"
                     min="0"
                     step="1"
+                    placeholder="0"
                   />
                 </div>
 
@@ -123,14 +146,15 @@ export function GrainBinCapacity() {
                     className="w-full px-4 py-3 bg-stone-50 border border-stone-300 rounded-lg focus:ring-2 focus:ring-[#2d5d4b] focus:border-[#2d5d4b] outline-none transition-shadow text-lg"
                     min="0"
                     step="1"
+                    placeholder="0"
                   />
                 </div>
 
-                <div>
-                  <label className="block text-sm font-semibold text-stone-800 mb-3">Fill Shape</label>
+                <fieldset>
+                  <legend className="block text-sm font-semibold text-stone-800 mb-3">Fill Shape</legend>
                   <div className="grid grid-cols-2 gap-4">
                     <label className={`
-                      flex items-center justify-center p-3 border rounded-lg cursor-pointer transition-colors
+                      flex items-center justify-center p-3 border rounded-lg cursor-pointer transition-colors focus-within:ring-2 focus-within:ring-[#2d5d4b] focus-within:ring-offset-1
                       ${fillShape === 'level' ? 'bg-[#2d5d4b]/10 border-[#2d5d4b] text-[#2d5d4b]' : 'bg-white border-stone-300 text-stone-600 hover:bg-stone-50'}
                     `}>
                       <input 
@@ -144,7 +168,7 @@ export function GrainBinCapacity() {
                       <span className="font-semibold">Level Fill</span>
                     </label>
                     <label className={`
-                      flex items-center justify-center p-3 border rounded-lg cursor-pointer transition-colors
+                      flex items-center justify-center p-3 border rounded-lg cursor-pointer transition-colors focus-within:ring-2 focus-within:ring-[#2d5d4b] focus-within:ring-offset-1
                       ${fillShape === 'peaked' ? 'bg-[#2d5d4b]/10 border-[#2d5d4b] text-[#2d5d4b]' : 'bg-white border-stone-300 text-stone-600 hover:bg-stone-50'}
                     `}>
                       <input 
@@ -158,7 +182,7 @@ export function GrainBinCapacity() {
                       <span className="font-semibold">Peaked Fill</span>
                     </label>
                   </div>
-                </div>
+                </fieldset>
 
                 {fillShape === 'peaked' && (
                   <div>
@@ -171,6 +195,7 @@ export function GrainBinCapacity() {
                       className="w-full px-4 py-3 bg-stone-50 border border-stone-300 rounded-lg focus:ring-2 focus:ring-[#2d5d4b] focus:border-[#2d5d4b] outline-none transition-shadow text-lg"
                       min="0"
                       step="1"
+                      placeholder="0"
                     />
                   </div>
                 )}
@@ -189,7 +214,7 @@ export function GrainBinCapacity() {
                       <option value="1.05">Average Pack (1.05)</option>
                       <option value="1.08">Heavy Pack (1.08)</option>
                     </select>
-                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-500 pointer-events-none" />
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-500 pointer-events-none" aria-hidden="true" />
                   </div>
                   <p className="text-xs text-stone-500 mt-2">Grain compresses under its own weight, increasing total bin capacity by 2-8%.</p>
                 </div>
@@ -199,9 +224,9 @@ export function GrainBinCapacity() {
 
           {/* Output Column */}
           <div className="lg:col-span-7 flex flex-col gap-6">
-            <div className="bg-[#2d5d4b] rounded-xl shadow-md p-8 sm:p-10 text-white relative overflow-hidden">
+            <div className={`bg-[#2d5d4b] rounded-xl shadow-md p-8 sm:p-10 text-white relative overflow-hidden transition-opacity duration-300 ${results.hasValidInputs ? 'opacity-100' : 'opacity-90'}`} aria-live="polite">
               {/* Background decorative element */}
-              <div className="absolute top-0 right-0 -mr-16 -mt-16 text-white/5 pointer-events-none">
+              <div className="absolute top-0 right-0 -mr-16 -mt-16 text-white/5 pointer-events-none" aria-hidden="true">
                 <Calculator className="w-64 h-64" />
               </div>
 
@@ -236,22 +261,31 @@ export function GrainBinCapacity() {
                 onClick={handlePrint}
                 className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-white border-2 border-stone-200 text-stone-800 font-bold rounded-lg hover:border-stone-300 hover:bg-stone-50 transition-colors focus:outline-none focus:ring-2 focus:ring-stone-500"
               >
-                <Printer className="w-5 h-5" />
+                <Printer className="w-5 h-5" aria-hidden="true" />
                 Print Estimate
               </button>
               <button 
-                onClick={() => alert("Link copied to clipboard!")}
+                onClick={handleShare}
                 className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-white border-2 border-stone-200 text-stone-800 font-bold rounded-lg hover:border-stone-300 hover:bg-stone-50 transition-colors focus:outline-none focus:ring-2 focus:ring-stone-500"
               >
-                <Share2 className="w-5 h-5" />
-                Share Tool
+                {isCopied ? (
+                  <>
+                    <Check className="w-5 h-5 text-green-600" aria-hidden="true" />
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <Share2 className="w-5 h-5" aria-hidden="true" />
+                    Share Tool
+                  </>
+                )}
               </button>
             </div>
 
             {/* Details Panel */}
             <div className="bg-white rounded-xl shadow-sm border border-stone-200 p-6 mt-2">
               <h3 className="font-bold text-stone-900 mb-4 flex items-center gap-2">
-                <Info className="w-5 h-5 text-stone-400" />
+                <Info className="w-5 h-5 text-stone-400" aria-hidden="true" />
                 Volume Breakdown
               </h3>
               <ul className="space-y-3 text-sm text-stone-600">
@@ -342,11 +376,11 @@ export function GrainBinCapacity() {
 
               <h3 className="text-xl font-bold text-stone-900 mt-10 mb-4">Related Storage Tools</h3>
               <div className="space-y-3">
-                <Link to="/tools/spoilage-risk-assessor" className="block p-4 border border-stone-200 rounded-lg hover:border-[#2d5d4b] transition-colors">
+                <Link to="/tools/spoilage-risk-assessor" className="block p-4 border border-stone-200 rounded-lg hover:border-[#2d5d4b] transition-colors focus:outline-none focus:ring-2 focus:ring-[#2d5d4b]">
                   <span className="font-bold text-[#2d5d4b]">Spoilage Risk Assessor &rarr;</span>
                   <p className="text-sm text-stone-600 mt-1">Evaluate loss-risk percentiles using moisture and temperature factors.</p>
                 </Link>
-                <Link to="/tools/storage-cost-analysis" className="block p-4 border border-stone-200 rounded-lg hover:border-[#2d5d4b] transition-colors">
+                <Link to="/tools/storage-cost-analysis" className="block p-4 border border-stone-200 rounded-lg hover:border-[#2d5d4b] transition-colors focus:outline-none focus:ring-2 focus:ring-[#2d5d4b]">
                   <span className="font-bold text-[#2d5d4b]">Storage Cost Analysis &rarr;</span>
                   <p className="text-sm text-stone-600 mt-1">Calculate carry overhead, depreciation, and holding costs.</p>
                 </Link>
