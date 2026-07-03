@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Background -->
+  <rect width="256" height="256" rx="64" fill="#2d5d4b"/>
+  <!-- Silo / Storage shape -->
+  <path d="M72 104 C72 64, 184 64, 184 104 L184 200 L72 200 Z" fill="#ffffff"/>
+  <!-- Roof line -->
+  <path d="M60 104 L196 104" stroke="#2d5d4b" stroke-width="12" stroke-linecap="round"/>
+  <!-- Base line -->
+  <path d="M60 200 L196 200" stroke="#2d5d4b" stroke-width="12" stroke-linecap="round"/>
+  <!-- Horizontal ridges on the silo -->
+  <line x1="72" y1="128" x2="184" y2="128" stroke="#2d5d4b" stroke-width="8"/>
+  <line x1="72" y1="152" x2="184" y2="152" stroke="#2d5d4b" stroke-width="8"/>
+  <line x1="72" y1="176" x2="184" y2="176" stroke="#2d5d4b" stroke-width="8"/>
+</svg>
