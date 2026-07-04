@@ -13,12 +13,12 @@ interface SEOProps {
 export function SEO({
   title,
   description,
-  keywords = 'Rural Utility Cost, Ag Storage, Grain Bin Capacity, Feed Storage, EPA Compliance, Water Tank, Spoilage Prevention',
+  keywords = 'Rural Ops Tools, Ag Storage, Grain Bin Capacity, Feed Storage, EPA Compliance, Water Tank, Spoilage Prevention',
   canonicalPath = '/',
-  imageUrl = 'https://storage.ruralutilitycost.com/og-image.jpg',
+  imageUrl = 'https://storage.ruralopstools.com/og-image.jpg',
   type = 'website'
 }: SEOProps) {
-  const currentUrl = `https://storage.ruralutilitycost.com${canonicalPath}`;
+  const currentUrl = `https://storage.ruralopstools.com${canonicalPath}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -33,7 +33,7 @@ export function SEO({
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="Rural Utility Cost" />
+      <meta name="author" content="Rural Ops Tools" />
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href={currentUrl} />
 

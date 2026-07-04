@@ -15,7 +15,7 @@ export function Favorites() {
   return (
     <div className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-8 py-12 overflow-y-auto">
       <SEO 
-        title="Pinned Ledgers | Rural Utility Cost" 
+        title="Pinned Ledgers | Rural Ops Tools" 
         description="Quick access to your saved storage compliance tools and capacity estimators." 
         canonicalPath="/favorites"
       />

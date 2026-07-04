@@ -5,13 +5,13 @@ export function SharedLegal({ type }: { type: 'legal' | 'license' | 'privacy' })
   const content = {
     legal: {
       title: 'Legal Disclaimer & Terms of Use',
-      description: 'Review the legal disclaimers and terms of use for estimates and analytical capacities inside the Rural Utility Cost network.',
-      body: 'Calculator results provided by the Rural Utility Cost Storage Hub are estimates and decision-support tools only. They do not constitute certified engineering plans, finalized lab results, or official EPA regulatory verdicts. Users must verify all important decisions independently. This module operates as part of the master ruralutilitycost.com ecosystem. Data entered into "Inspector Mode" calculators operates strictly within browser bounds unless otherwise stated in authenticated modules.'
+      description: 'Review the legal disclaimers and terms of use for estimates and analytical capacities inside the Rural Ops Tools network.',
+      body: 'Calculator results provided by the Rural Ops Tools Storage Hub are estimates and decision-support tools only. They do not constitute certified engineering plans, finalized lab results, or official EPA regulatory verdicts. Users must verify all important decisions independently. This module operates as part of the master ruralopstools.com ecosystem. Data entered into "Inspector Mode" calculators operates strictly within browser bounds unless otherwise stated in authenticated modules.'
     },
     license: {
       title: 'Open Source License',
-      description: 'Review the Open Source MIT License constraints and data sharing policies utilized by the Rural Utility Cost modules.',
-      body: 'This specific module and interface configuration is protected by standard MIT Licensing terms inherited from the ruralutilitycost.com open source repository constraints. Refer to the GitHub open source documentation for exhaustive replication rules.'
+      description: 'Review the Open Source MIT License constraints and data sharing policies utilized by the Rural Ops Tools modules.',
+      body: 'This specific module and interface configuration is protected by standard MIT Licensing terms inherited from the ruralopstools.com open source repository constraints. Refer to the GitHub open source documentation for exhaustive replication rules.'
     },
     privacy: {
       title: 'Privacy Policy & Compliance Vault',
@@ -25,7 +25,7 @@ export function SharedLegal({ type }: { type: 'legal' | 'license' | 'privacy' })
   return (
     <div className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-8 py-16 overflow-y-auto">
        <SEO 
-         title={`${selected.title} | Rural Utility Cost`}
+         title={`${selected.title} | Rural Ops Tools`}
          description={selected.description}
          canonicalPath={`/${type}`}
        />
@@ -39,7 +39,7 @@ export function SharedLegal({ type }: { type: 'legal' | 'license' | 'privacy' })
              </p>
              <div className="mt-8 pt-8 border-t border-stone-100">
                 <p className="text-[10px] font-mono text-stone-400 uppercase tracking-widest font-bold">
-                   Governing Body: Rural Utility Cost Master Domain <br />
+                   Governing Body: Rural Ops Tools Master Domain <br />
                    Effective Epoch: 2026-06-07 // AUDIT-READY
                 </p>
              </div>

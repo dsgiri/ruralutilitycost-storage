@@ -20,8 +20,8 @@ export function Contact() {
   return (
     <div className="flex-1 w-full max-w-3xl mx-auto px-4 sm:px-8 py-16 overflow-y-auto">
       <SEO 
-        title="Contact & Support | Rural Utility Cost"
-        description="Contact the Rural Utility Cost support team for EPA auditing procedures, inventory tracking guidance, or technical issues."
+        title="Contact & Support | Rural Ops Tools"
+        description="Contact the Rural Ops Tools support team for EPA auditing procedures, inventory tracking guidance, or technical issues."
         canonicalPath="/contact"
       />
       <div className="bg-white border border-stone-200 rounded-xl shadow-sm p-6 sm:p-8">

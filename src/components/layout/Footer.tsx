@@ -25,7 +25,7 @@ export function Footer() {
       </nav>
       <div className="text-center sm:text-right max-w-sm">
         <p className="leading-tight">
-          Estimates provided by Storage are for decision support only. <span className="text-stone-400 font-normal">Verify results independently. Part of the Rural Utility Cost project.</span>
+          Estimates provided by Storage are for decision support only. <span className="text-stone-400 font-normal">Verify results independently. Part of the Rural Ops Tools project.</span>
         </p>
       </div>
     </footer>

@@ -6,7 +6,7 @@ export function NotFound() {
   return (
     <div className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-8 py-16 overflow-y-auto text-center flex flex-col items-center justify-center min-h-[60vh]">
       <SEO 
-        title="Page Not Found | Rural Utility Cost"
+        title="Page Not Found | Rural Ops Tools"
         description="The requested page could not be found."
         canonicalPath="/404"
       />

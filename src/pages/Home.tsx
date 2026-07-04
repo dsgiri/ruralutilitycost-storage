@@ -18,7 +18,7 @@ export function Home() {
   return (
     <main className="w-full flex-1 overflow-y-auto bg-[#F9F9F8] text-stone-900 font-sans focus:outline-none" tabIndex={-1}>
       <SEO 
-        title="Storage | Rural Utility Cost" 
+        title="Storage | Rural Ops Tools" 
         description="Estimate capacity, manage inventory rotation, evaluate spoilage risk, and analyze storage costs with practical decision-support tools." 
         canonicalPath="/"
       />
@@ -318,7 +318,7 @@ export function Home() {
             <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#2d5d4b]" aria-hidden="true"></span> Decision-support only</span>
             <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#2d5d4b]" aria-hidden="true"></span> Verify results independently</span>
             <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#2d5d4b]" aria-hidden="true"></span> Built for practical rural planning</span>
-            <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#2d5d4b]" aria-hidden="true"></span> Part of Rural Utility Cost</span>
+            <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#2d5d4b]" aria-hidden="true"></span> Part of Rural Ops Tools</span>
           </div>
         </div>
       </section>

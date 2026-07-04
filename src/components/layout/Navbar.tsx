@@ -25,7 +25,7 @@ export function Navbar() {
       <NavLink to="/" onClick={() => handleNavClick('Home')} className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1 -ml-1">
         <div className="w-8 h-8 flex-shrink-0 bg-blue-700 rounded flex items-center justify-center text-white font-bold" aria-hidden="true">R</div>
         <div className="flex flex-col">
-          <span className="text-sm font-bold tracking-tight text-stone-800 uppercase">Rural Utility Cost</span>
+          <span className="text-sm font-bold tracking-tight text-stone-800 uppercase">Rural Ops Tools</span>
           <span className="text-[10px] text-blue-600 font-medium tracking-widest -mt-1 uppercase">Storage Hub</span>
         </div>
       </NavLink>
