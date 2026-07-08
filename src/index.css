@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
+  --color-silo-steel: #4A5560;
+  --color-grain-gold: #C89B3C;
+  --color-bin-cream: #F2EDE1;
+  --color-harvest-rust: #A8462F;
+  --color-field-sage: #5C7A5E;
+  --color-ink: #1F2420;
+
   --font-sans: "Inter", "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-display: "Big Shoulders Display", "Arial Black", Impact, sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 @layer base {
@@ -11,8 +20,8 @@
     margin: 0;
   }
   body {
-    background-color: var(--color-stone-50);
-    color: var(--color-stone-900);
+    background-color: var(--color-bin-cream);
+    color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     display: flex;

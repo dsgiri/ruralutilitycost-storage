@@ -1,4 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import sys
+
+code = """import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ThermometerSun, AlertTriangle, CheckCircle2, Info } from 'lucide-react';
 import { CalculatorPageLayout } from '../../components/layout/CalculatorPageLayout';
@@ -239,12 +241,11 @@ export function SpoilageRiskAssessor() {
       workedExample={workedExample}
       formulaSection={formulaSection}
       assumptions={assumptions}
-            faqsData={[
-  { question: "How long can grain be stored before it spoils?", answer: "It depends entirely on moisture and temperature. Corn at 15% moisture and 40°F can easily store for over a year. That same corn at 20% moisture and 70°F can begin molding in less than two weeks." },
-  { question: "What happens if grain gets too warm?", answer: "Warm grain increases the respiration rate of the seed and exponentially increases mold and insect activity. Moisture migration will also occur as warm air rises, condensing on the cold roof and raining back down, causing crusting at the top of the bin." },
-  { question: "How does aeration help?", answer: "Aeration serves primarily to cool the grain mass and equalize temperatures, stopping moisture migration. Unless you have high-capacity fans specifically sized for natural air drying, aeration is for temperature control, not moisture removal." }
-]}
       faq={faq}
     />
   );
 }
+"""
+
+with open('src/pages/tools/SpoilageRiskAssessor.tsx', 'w') as f:
+    f.write(code)

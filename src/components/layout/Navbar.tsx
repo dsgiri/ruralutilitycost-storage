@@ -8,6 +8,8 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const internalLinks = [
+    { name: 'Calculators', path: '/' },
+    { name: 'Guides', path: '/guides/store-vs-sell-decision-framework' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
     { name: 'Legal', path: '/legal' },

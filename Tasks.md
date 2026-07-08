@@ -1,10 +1,14 @@
-# Tasks
+# Storage.RuralOpsTools.com Revamp Tasks
+
+## Pending
+- [x] Create Store vs Sell Calculator
+- [x] Standardize calculator layouts (`CalculatorPageLayout.tsx`)
+- [x] Create universal Gauge component (`GrainFillGauge.tsx`)
+- [x] Create the 3 Guide Pages (/guides/store-vs-sell-decision-framework, /guides/hidden-cost-of-grain-storage, /guides/post-harvest-storage-checklist)
+- [x] Implement JSON-LD FAQPage schema across calculators
 
 ## Completed
-- [x] **Inventory Rotation Planner**: Build full calculator page for structuring FIFO logistics and managing inventory flow constraints.
-- [x] **Spoilage Risk Assessor**: Build full calculator page for tracking moisture, temperature, and biological parameters to evaluate loss-risk percentiles.
-- [x] **Storage Cost Analysis Matrix**: Build full calculator page for calculating carry overhead, depreciation, and opportunity costs.
-- [x] **Grain Bin Capacity**
-- [x] **Feed Storage Capacity**
-- [x] **Equipment Storage Planner**
-- [x] **Tank Volume & EPA Auditor**
+- [x] Apply Design System tokens (Colors, Typography)
+- [x] Update Homepage to new structure
+- [x] Update Navigation to new hierarchy
+- [x] Rebrand from RuralUtilityCost.com to RuralOpsTools.com

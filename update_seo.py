@@ -1,4 +1,6 @@
-import React from 'react';
+import sys
+
+code = """import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface FAQ {
@@ -81,3 +83,7 @@ export function SEO({
     </Helmet>
   );
 }
+"""
+
+with open('src/components/seo/SEO.tsx', 'w') as f:
+    f.write(code)

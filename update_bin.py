@@ -1,4 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import sys
+
+code = """import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calculator, Info } from 'lucide-react';
 import { CalculatorPageLayout } from '../../components/layout/CalculatorPageLayout';
@@ -242,12 +244,11 @@ export function GrainBinCapacity() {
       workedExample={workedExample}
       formulaSection={formulaSection}
       assumptions={assumptions}
-            faqsData={[
-  { question: "How accurate is a bin capacity estimate?", answer: "Estimates are usually within 3-5% of actual. The biggest variable is the pack factor, which changes based on test weight, moisture, and how the grain was dropped into the bin (e.g. using a spreader vs a single spout)." },
-  { question: "What is grain pack factor?", answer: "Grain at the bottom of a bin is crushed slightly by the weight of the grain above it, removing air space. This means a 40-foot tall bin holds slightly more bushels than two 20-foot tall bins of the same diameter." },
-  { question: "How do I measure the peak height?", answer: "Peak height is the vertical distance from the eave (top of the straight wall) to the top of the grain cone. You can estimate this by knowing the angle of repose for your grain (typically 22-28 degrees for corn and soybeans)." }
-]}
       faq={faq}
     />
   );
 }
+"""
+
+with open('src/pages/tools/GrainBinCapacity.tsx', 'w') as f:
+    f.write(code)
